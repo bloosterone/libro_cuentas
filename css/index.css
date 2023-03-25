@@ -9,7 +9,7 @@ body{
 	background-image: url("../img/FONDO2.PNG");
 	background-repeat: repeat;
 	background-size: cover;
-	overflow: hidden;
+	
 	display: flex;
 	justify-content: center;
 	
