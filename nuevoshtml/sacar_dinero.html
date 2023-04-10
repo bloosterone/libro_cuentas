@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Ingresar Dinero</title>
+  
+    <link rel="stylesheet" type="text/css" href="../css/sacar_dinero.css">
+   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="../fonts.css">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  </head>
+ 
+  
+                      
+  <body>
+
+    <div class="contenedor-navbar">
+        
+      <div class="navbar"><a href="nuevoshtml/index.html"><span class="index.html"></span>Inicio</a></div>          
+      <div class="navbar"><a href="nuevoshtml/ingresar_dinero.html"><span class=""></span>Ingresar Dinero</a></div>
+      <div class="navbar"><a href="nuevoshtml/sacar_dinero.html"><span class="icon-rocket"></span>Sacar Dinero</a></div>
+      <div class="navbar"><a href="nuevoshtml/ver_ingresos.html"><span class="icon-earth"></span>Ver Registros de ingreso</a></div>
+      <div class="navbar"><a href="nuevoshtml/ver_salidas.html"><span class="icon-mail"></span>Ver Registros de salida</a></div>
+      <div class="navbar"><a href="nuevoshtml/ver_deudas.html"><span class="icon-mail"></span>Ver deudas</a></div>
+      <div class="navbar"><a href="nuevoshtml/modificar_totales.html"><span class="icon-mail"></span>Modificar totales</a></div>
+      
+    </div>
+    
+
+    
+
+    
+
+
+    <div class="contenedor">
+
+      <div class="contenedor-header">
+        <div class="head-search_txt">
+               <div class="search_txt-barra"><input name="search" id="search" type="search" placeholder="Buscar registro" aria-label="Search"></div>
+               <div class="search_txt-boton"><button id="btnBuscador" class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button></div>
+        </div>
+  
+        <div class="head-menu">
+              <a href="#" class="bt-menu" >
+              <span id="menu" class="icon-paragraph-right"></span>
+              </a>
+        </div>
+      </div>
+
+      <div class="contenedor-titulo">
+        <p>Valores Totales</p>
+      </div>
+
+      <div class="contenedor-capitales">
+        <form action="#" id="capitales">
+            <label for="capital"> Capital Total:</label>
+            <input type="text" name="capital" value="0" id="capital_total"></br>
+            <label for="capital_tarjeta">Tarjeta Total:</label>
+            <input type="text" name="capital_tarjeta" value="0" id="capital_tarjeta"></br>
+            <label for="capital_efectivo">Efectivo Total:</label>
+            <input type="text" name="capital_efectivo" value="0" id="capital_efectivo"></br>
+            <label for="capital_supuesto">Deben Total:</label>
+            <input type="text" name="capital" value="0" id="capital_supuesto">
+        </form>
+      </div>
+      <div class="contenedor-subtitulo">
+        
+        <img src="../img/cabecera_salidas2.png">
+      </div>
+
+      <div class="contenedor-formulario">
+        <form id="task-form" class="task-form">
+                    
+                    
+                    <label class="form-group">Titulo:</label>
+                      <input type="text" id="titulo" placeholder="Titulo" class="form-control"></br>
+                    
+                    <label class="form-group" id="fecha">Fecha:</label>
+                      <input type="date" id="date" placeholder="date" class="form-control"></br>
+                    
+                    <label class="form-group" id="dinero_mano">Dinero en Mano:</label>
+                      <input type="text" id="dinero_real" placeholder="Dinero En Mano" class="form-control"></br>
+                    
+                    <label  for="pago" class="form-group" id="pagos">Metodo de Pago:</label>
+                       <input type="radio" id="pago" name="pago" class="pagos" value="efectivo"></br>
+                         <label for="pago" id="pago1_label">EFECTIVO</label><br>
+                       <input type="radio" id="pago2" name="pago" class="pagos" value="tarjeta">
+                          <label for="pago" id="pago2_label">TARJETA</label><br>
+                          
+                    
+                   
+                    <label for="dinero_deben" class="form-group" id="sacar">Dinero Deben:</label>
+                      <input type="text" id="dinero_deben" name="dinero_deben" placeholder="Dinero que Deben" class="form-control"></br>
+                    
+                    <label class="form-group" id="comentario">Comentario:</label>
+                      <textarea id="description" class="form-control" placeholder="Comentario"></textarea></br>
+                    
+                 
+                    
+                  </form> 
+      </div>
+
+
+
+<!-- -------div contenedor--- -->
+    </div>
+
+   
+
+<script type="text/javascript" src="../jquery/jquery-3.6.0.min.js"></script>
+  
+    <!-- Frontend Logic -->
+    
+    <script src="../js/general_nuevos.js"></script>
+    <script type="text/javascript">
+      
+
+        $(document).ready(ingresar);
+
+    
+
+    
+  function ingresar(){
+
+
+
+    $('.task-form').submit(e => {
+    e.preventDefault();
+      
+
+    let dinero_tarjetaa =$('#pago2').val();
+    let dinero_efectivoo =$('#pago').val();
+   let dinero = $('#dinero_real').val();
+   let deben = 0;
+   let pagado=1;
+     if ($('input:radio[name=pago]:checked').val()==dinero_tarjetaa) {
+             dinero_tarjetaa=dinero;
+             dinero_efectivoo="0";
+     }
+     else{
+              dinero_efectivoo=dinero;
+              dinero_tarjetaa="0";
+     }
+      
+     
+
+     
+      
+      let capi= $('#capital_total').val();
+       let tarj = $('#capital_tarjeta').val();
+        let efec = $('#capital_efectivo').val();        
+      let supu = $('#capital_supuesto').val();   
+
+             
+
+    const postData = {
+      titulo: $('#titulo').val(),
+      date: $('#date').val(),
+     pago: $('input:radio[name=pago]:checked').val(),
+      dinero_tarjeta: dinero_tarjetaa,
+      dinero_efectivo:  dinero_efectivoo,
+      dinero_deben: deben,
+      description: $('#description').val(),
+              capital: capi,
+              tarjeta: tarj,
+              efectivo: efec,
+              supuesto: supu,
+              positivo_negativo:2,
+              salida:1,
+              ingreso:0,
+              pagado:pagado,
+      id: $('#taskId').val()
+    };
+    const url ='../task-add.php';
+    console.log(postData, url);
+    
+    $.post(url, postData, (response) => {
+      console.log(response);
+      $('.task-form').trigger('reset');
+     valores();
+     
+      
+    });
+  });
+}
+
+    </script>
+  </body>
+
+</html>

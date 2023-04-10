@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Ingresar Dinero</title>
+  
+    <link rel="stylesheet" type="text/css" href="../css_html/ver_ingresos.css">
+   
+   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="../fonts.css">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  </head>
+ 
+  
+                      
+  <body>
+
+    <header>
+    <div class="menu_bar">
+      <a href="#" class="bt-menu" >
+        <span id="menu" class="icon-paragraph-right"></span></a>
+        <div class="navbar-nav">
+          <form class="form-inline my-2 my-lg-0">
+            <input name="search" id="search" class="form-control mr-sm-2" type="search" placeholder="Buscar registro" aria-label="Search">
+            <button id="btnBuscador" class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
+
+          </form>
+        </div>
+    </div>
+
+    <nav>
+        
+      <ul>
+        <li><a href="../index.html"><span class=></span>Inicio</a></li>
+        <li><a href="ingresar_dinero.html"><span class=""></span>Ingresar Dinero</a></li>
+        <li><a href="sacar_dinero.html"><span class="icon-rocket"></span>Sacar Dinero</a></li>
+        <li><a href="ver_ingresos.html"><span class="icon-earth"></span>Ver Registros de ingreso</a></li>
+        <li><a href="ver_salidas.html"><span class="icon-mail"></span>Ver Registros de salida</a></li>
+        <li><a href="ver_deudas.html"><span class="icon-mail"></span>Ver deudas</a></li>
+        <li><a href="modificar_totales.html"><span class="icon-mail"></span>Modificar totales</a></li>
+      </ul>
+    </nav>
+  </header>
+    
+
+    
+
+    
+
+
+    <div class="container">
+
+      <div class="titulo"><p>Valores Totales</p></div>
+      <div class="capitales">
+       <form action="#" id="capitales">
+         
+       
+              <label for="capital"> Capital Total:</label>
+              <input type="text" name="capital" value="0" id="capital_total">
+              <label for="capital_tarjeta">Tarjeta Total:</label>
+              <input type="text" name="capital_tarjeta" value="0" id="capital_tarjeta">
+              <label for="capital_efectivo">Efectivo Total:</label>
+              <input type="text" name="capital_efectivo" value="0" id="capital_efectivo">
+              <label for="capital_supuesto">Deben Total:</label>
+              <input type="text" name="capital" value="0" id="capital_supuesto">
+             
+            
+            
+      </form>
+      </div>
+      <div class="subtitulo">
+        
+        <img src="../img/cabecera_ver_ingresos.png">
+      </div>
+
+      <div class="formulario">
+        <div class="nohay">
+              <h1>No hay registros</h1>
+            </div>
+           
+           <div id="tasks">
+          </div>
+          
+      </div>
+
+
+
+<!-- -------div contenedor--- -->
+    </div>
+
+   
+
+<script type="text/javascript" src="../jquery/jquery-3.6.0.min.js"></script>
+  
+    <!-- Frontend Logic -->
+   
+    <script src="../general_nuevos.js"></script>
+    <script type="text/javascript">
+        $(document).ready(fetchTasks);
+
+        
+function fetchTasks() {
+  console.log("se lee el fetch");
+ $('.nohay').show();
+    $.ajax({
+      url: '../tasks-list-ingresos.php',
+      type: 'GET',
+      success: function(response) {
+        
+        const tasks = JSON.parse(response);
+        console.log(tasks);
+        let template = '';
+        let reemplazo = "";
+        tasks.forEach(task => {
+          let verificar = `${task.titulo}`;
+          console.log(verificar);
+          if (verificar=="" || task.length==0) {
+            console.log("llego hasta el if");
+            $('.nohay').show();
+      
+          }else{
+            console.log("llego hasta el else");
+        $('.nohay').hide();
+          template += `
+          <table id="dividir">
+                  
+                     <tr taskId="${task.id}"><th> ID</th><td>${task.id}</td></tr>
+                    <tr> <th>Titulo</th><td><a href="#" class="task-item">
+                    ${task.titulo} 
+                  </a></td></tr>
+            <tr> <th>Fecha</th><td>${task.date}</td></tr>
+            <tr> <th>Medio de Pago</th><td>${task.pago}</td></tr>
+            <tr><th> Dinero en Tarjeta</th><td>${task.dinero_tarjeta}</td></tr>
+             <tr> <th>Dinero en Efectivo</th><td>${task.dinero_efectivo}</td></tr>
+            <tr> <th>Dinero que deben</th><td>${task.dinero_deben}</td></tr>
+            <tr> <th>Comentario</th><td>${task.description}</td></tr>
+
+
+                  <tr>
+                    <td>
+
+                    <button class="task-delete btn btn-danger">
+
+                     Borrar
+                    </button>
+                  </td>
+                  
+                  </tr>
+                  </table>
+                  
+                   
+                  `;
+
+          }
+
+          
+        });
+        $('#tasks').html(template);
+      }
+    });
+  }
+
+        
+
+
+
+    </script>
+  </body>
+
+</html>
