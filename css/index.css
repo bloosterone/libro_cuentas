@@ -6,16 +6,15 @@
 body{
 	margin: 10px 10px;
 	padding: 10px 10px;
-	background-image: url("../img/FONDO2.PNG");
-	background-repeat: repeat;
-	background-size: cover;
 	
+	background-image: radial-gradient(circle at 50% -20.71%, #badbff 0, #c2daff 6.25%, #c9d8ff 12.5%, #d0d6ff 18.75%, #d8d4ff 25%, #dfd2fe 31.25%, #e6d0fa 37.5%, #eccff6 43.75%, #f2cdf2 50%, #f7cced 56.25%, #fccbe8 62.5%, #ffcae2 68.75%, #ffc9dd 75%, #ffc9d7 81.25%, #ffc9d1 87.5%, #ffc9cc 93.75%, #ffcac6 100%);	display: flex;
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	
 }
 .contenedor{
-	outline: 1px solid red;
+	
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -25,7 +24,7 @@ body{
 .contenedor-header{
 	width: 100%;
 	height: 60px;
-	outline: 2px solid green;
+	
 	display: flex;
 	flex-direction: row;
 	
@@ -66,7 +65,7 @@ body{
 }
 
 .contenedor-header .head-search_txt{
-	outline: 1px solid blue;
+	
 	
 	min-width: 270px;
 	height: 50px;
@@ -81,12 +80,13 @@ body{
 .contenedor-header .head-search_txt .search_txt-barra{
 	position: relative;
 	flex-basis: 60%;
-	outline: 1px dashed black;
+	
 }
 .contenedor-header .head-search_txt .search_txt-boton{
 	position: relative;
 	flex-basis: 20%;
-	outline: 1px dashed black;
+	
+	
 }
 .contenedor-header .head-search_txt .search_txt-barra #search{
 	width: 100%;
@@ -96,9 +96,14 @@ body{
 	text-align: center;	
 	border-style: none;
 	font-family: 'Varela Round', sans-serif;
+	transition: box-shadow .7s;
 }
 .contenedor-header .head-search_txt .search_txt-barra #search::placeholder{
 	color: #A1A4B2;
+}
+.contenedor-header .head-search_txt .search_txt-boton #btnBuscador:hover, #search:hover{
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 .contenedor-header .head-search_txt .search_txt-boton #btnBuscador{
 	border-radius: 38px;
@@ -109,6 +114,7 @@ body{
 	color: #fff;
 	font-family: 'Varela Round', sans-serif;
 	cursor: pointer;	
+	transition: box-shadow .7s;
 }
 .contenedor-header .head-menu{
 	flex-grow: 1;
@@ -138,7 +144,7 @@ body{
 .contenedor-tituloslide{
 	width: 100%;
 	height: 100%;
-	outline: 2px solid green;
+	
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -169,6 +175,7 @@ body{
 	margin-top: 30px;
 	width: 314px;
 	height: 200px;
+	
 }
 
 .contenedor-tituloslide .contenedor-slide .miSlider img{
@@ -178,7 +185,10 @@ body{
 	object-fit: fill;
 	vertical-align: top;
 	transition: 2s;
-	border-radius: 10px 10px 10px 10px;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+	
 }
 .contenedor-tituloslide .contenedor-slide .direcciones{
 	width: 100%;
@@ -247,7 +257,7 @@ body{
 /*--------------------slide y titulo---------------------*/
 .contenedor-menu{
 	width: 100%;
-	outline: 2px solid green;
+	
 	height: 100%;
 	display: flex;
 	justify-content: center;
@@ -271,9 +281,12 @@ body{
 	font-weight: bold;
 	font-size: 28px;
 	line-height: 108.1%;
+	
 		}
 .contenedor-menu .elige img{
 	transform: rotate(21.62deg);
+	
+	
 }
 .contenedor-menu .menu{
 		display: flex;
@@ -286,11 +299,25 @@ body{
 		padding-left: 10%;
 		padding-right: 10%;
 		
+		
+		
+		
 }
 .contenedor-menu .menu .uno{
 	width: 92px;
 	margin:0px 0px 10px 10px;
+	
+	
+	
 		
+}
+.uno img{
+	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+	border-radius: 10px;
+}
+.uno img:hover{
+	
+	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 /*
 header {
