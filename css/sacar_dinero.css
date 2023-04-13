@@ -5,12 +5,11 @@
 	box-sizing:border-box;
 }
 body{
-	margin: 10px 10px;
-	padding: 10px 10px;
-	background-image: url("../img/FONDO2.PNG");
-	background-repeat: repeat;
-	background-size: cover;
 	
+	padding: 10px 10px;
+	
+	background-image: radial-gradient(circle at 50% -20.71%, #badbff 0, #c2daff 6.25%, #c9d8ff 12.5%, #d0d6ff 18.75%, #d8d4ff 25%, #dfd2fe 31.25%, #e6d0fa 37.5%, #eccff6 43.75%, #f2cdf2 50%, #f7cced 56.25%, #fccbe8 62.5%, #ffcae2 68.75%, #ffc9dd 75%, #ffc9d7 81.25%, #ffc9d1 87.5%, #ffc9cc 93.75%, #ffcac6 100%);	display: flex;
+	height: 100vh;
 	display: flex;
 	justify-content: center;
 	
@@ -22,7 +21,7 @@ body{
 	padding-bottom: 80px;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	
 	align-items: center;
 
 }
@@ -86,6 +85,7 @@ body{
 	position: relative;
 	flex-basis: 60%;
 	outline: 1px dashed black;
+	
 }
 .contenedor-header .head-search_txt .search_txt-boton{
 	position: relative;
@@ -100,9 +100,14 @@ body{
 	text-align: center;	
 	border-style: none;
 	font-family: 'Varela Round', sans-serif;
+	transition: box-shadow .7s;
 }
 .contenedor-header .head-search_txt .search_txt-barra #search::placeholder{
 	color: #A1A4B2;
+}
+.contenedor-header .head-search_txt .search_txt-boton #btnBuscador:hover, #search:hover{
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 .contenedor-header .head-search_txt .search_txt-boton #btnBuscador{
 	border-radius: 38px;
@@ -113,6 +118,7 @@ body{
 	color: #fff;
 	font-family: 'Varela Round', sans-serif;
 	cursor: pointer;	
+	transition: box-shadow .7s;
 }
 .contenedor-header .head-menu{
 	flex-grow: 1;
@@ -141,11 +147,12 @@ body{
 	height: 30px;
 	display: flex;
 	justify-content: center;
+	margin-top: 20px;
 	
 	
 }
 .contenedor-titulo p{
-	color: rgba(186, 77, 142, 1);
+	color: black;
 
 	font-family: Varela Round;
 	font-size: 28px;
@@ -168,7 +175,8 @@ body{
 .contenedor-capitales form{
 	margin-left: 10px;
 	margin-right: 10px;
-	background-color: rgba(190, 239, 255, 0.74);
+	background-color: #d5e7f7;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 	border-radius: 15px;
 	padding: 10px;
 }
@@ -216,6 +224,7 @@ body{
 	height: 100%;
 	object-fit: cover;
 	border-radius: 15px;
+	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .contenedor-formulario{
@@ -229,11 +238,12 @@ body{
   
 }
 .contenedor-formulario form{
-	background: rgba(137, 255, 96, 0.4);
+	background-color: #E05263;
 	margin-left: 10px;
 	margin-right: 10px;
 	padding: 10px;
 	border-radius: 15px;
+	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 
 }
 
@@ -296,7 +306,9 @@ body{
 	width: 96px;
 		height: 36px;
 
-	background: #86E6AC;
+	background: rgb(251, 75, 78);
+	cursor: pointer;
+	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 		border-radius: 38px;
 		border-style: none;
 		color: #ffffff;

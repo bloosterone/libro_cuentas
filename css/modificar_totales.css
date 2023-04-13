@@ -1,0 +1,418 @@
+header {
+	width:100%;
+}
+
+header nav {
+	width:90%;
+	max-width:1000px;
+	margin:20px auto;
+	
+	background: rgba(255, 255, 255, 0.59);
+border-radius: 12px;
+}
+
+.menu_bar {
+	display:none;
+}
+
+header nav ul {
+	overflow:hidden;
+	list-style:none;
+}
+
+header nav ul li {
+	float:left;
+
+}
+
+header nav ul li a {
+	color:#fff;
+	padding:20px;
+	display:block;
+	text-decoration:none;
+}
+
+header nav ul li span {
+	margin-right:10px;
+}
+
+
+
+section {
+	padding:20px;
+}
+@media screen and (max-width:720px ) {
+	body{
+		background-image:url("../img/FONDO2.png");
+
+		background-repeat:repeat;
+	}
+	input[type=text]{
+		width: 145px;
+		height: 26px;
+		background: #F2F3F7;
+		border-radius: 15px;
+		border-style: none;
+	}
+	header nav{
+		width: 375px;
+		height: 465px;
+		left: 17px;
+		top: -120%;
+background: rgba(255, 255, 255, 0.59);
+border-radius: 12px;
+		z-index: 3;
+		position: absolute;
+	}
+
+	header nav ul li {
+		display:block;
+		float:none;
+		border-bottom:1px solid rgba(255,255,255, .3);
+		width: 312px;
+		height: 44px;
+		margin-bottom:14PX ;
+		background: #E586B2;
+		border-radius: 38px;
+		text-align: center;
+		font-family: Varela Round;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 30px;
+		letter-spacing: 0em;
+
+
+
+	}
+	header nav ul li a{
+		position: relative;
+		top: -10px;
+
+	}
+
+
+	.menu_bar {
+		display:block;
+		width:100%;
+		position: relative;
+		
+	}
+
+	.menu_bar .bt-menu {
+		display:block;
+		padding:20px;
+		
+		color:#fff;
+		text-decoration:none;
+		font-weight: bold;
+		font-size:25px;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+
+	.menu_bar span {
+		position: relative;
+		float:right;
+		font-size:40px;
+		 margin-right: -10px;
+
+	}
+	.navbar-nav{
+	
+	position: absolute;	
+	top: 22px;
+	left: 7px;
+		height: 100%;
+	width: 100%;
+	max-width: 310px;
+		
+
+	}
+	#search{
+	
+	width: 206px;
+	height: 35.94px;
+	left: 0px;
+	top: -05px;
+	float: left;
+	color: #A1A4B2;
+	border-radius: 15px;
+	text-align: center;
+			
+	border-style: none;
+	font-family: 'Varela Round', sans-serif;
+	}
+	#search::placeholder{
+		color: #A1A4B2;
+	}
+	#btnBuscador{
+		border-radius: 38px;
+	
+		border-style: none;
+		width: 96px;
+		height: 36px;
+		margin-left: 8px;
+		background-color: #E586B2;
+		color: #fff;
+		font-family: 'Varela Round', sans-serif;		
+	}
+	
+	.menu{
+	position: absolute;
+	width: 349px;
+	height: 210px;
+	margin: auto;
+	top: 432px;
+	}
+
+
+	.fade{
+	animation-name: fade;
+	animation-duration: 1.5s;
+	}
+
+	.container{
+		position: relative;
+		top: 0px;
+		width: 100%;
+		height: 100%;
+		max-width: 400px;
+		min-height: 600px;
+		max-height: 720px;
+		
+	}
+	.titulo{
+		position: relative;
+		width: 200px;
+		height: 30px;
+		left: 100px;
+		top: 10px;
+	}
+	.titulo p{
+		color: rgba(186, 77, 142, 1);
+
+		font-family: Varela Round;
+		font-size: 28px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 30px;
+		letter-spacing: 0em;
+		text-align: left;
+
+	}
+	.capitales{
+ 		position: relative;
+		
+		width: 303px;
+		height: 139px;
+		left: 49px;
+		top: 20px;
+		border-radius: 10px;
+		background-color: rgba(190, 239, 255, 0.74);
+	}
+	.capitales2{
+		    position: relative;
+    width: 303px;
+    height: 129px;
+    margin: auto;
+    top: -50px;
+    padding-top: 20px;
+    background: rgba(238, 190, 255, 0.74);
+    border-radius: 10px;
+    padding-bottom: 0px;
+	}
+	#nubecita{
+		position: relative;
+		left: 150px;
+	}
+	.cuidado{
+		text-align: center;
+		color: rgba(240, 61, 61, 1);
+		font-family: Varela Round;
+font-size: 10px;
+font-style: normal;
+font-weight: 400;
+line-height: 22px;
+letter-spacing: 0em;
+text-align: center;
+margin: auto;
+
+
+	}
+	input{
+		position: relative;
+		float: right;
+		display: inline-table;
+		width: 145px;
+		height: 26px;
+		background: #F2F3F7;
+		border-radius: 15px;
+		border-style: none;
+		margin-top: 4px;
+		right: 10px;
+		text-align: center;
+		
+	}
+	label{
+		position: relative;
+		display: inline-table;
+		float: left;
+		margin-top: 10px;
+		left: 12px;
+		color: rgba(85, 72, 114, 1);
+		font-family: Varela Round;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		line-height: 108.1%;
+	}
+	.subtitulo{
+		position: relative;
+		width: 355px;
+		height: 53px;
+		margin: auto;
+		top: 35px;
+
+	}
+	.formulario{
+		position: relative;
+		width: 303px;
+		height: auto;
+		margin: auto;
+		top: 50px;
+
+
+border-radius: 10px;
+	}
+	.task-form input[id=pago]{
+		position: relative;
+		display: inline-table;
+		width: 16px;
+		height: 16.23px;
+		left: 8px;
+		top: 8px;
+		border: 2px solid #FFFFFF;
+		box-sizing: border-box;
+		border-radius: 4px;
+
+
+	}
+	.task-form input[id=pago2]{
+		position: relative;
+		display: inline-table;
+		width: 16px;
+		height: 16.23px;
+		left: -136px;
+		top: 10px;
+		border: 2px solid #FFFFFF;
+		box-sizing: border-box;
+		border-radius: 4px;
+	}
+	.task-form input[id=dinero_deben]{
+		position: relative;
+		display: inline-table;
+		
+		left: -10px;
+		top: 10px;
+	
+	}
+
+	input[type=date]{
+		position: relative;
+		left: 137px;
+	}
+	#modificar_totales{
+		position: relative;
+width: 96px;
+height: 36px;
+top: 50px;
+left: 120px;
+background: #08C152;
+border-radius: 38px;
+border-style: none;
+color: #fff;
+
+	}
+	#fecha{
+		position: relative;
+		top:28px ;
+		left: -48px;
+	}
+	#dinero_mano{
+		position: relative;
+		top:-4px ;
+		left: 12px;
+	}
+	#comentario{
+		position: relative;
+		top: 35px;
+	}
+	#sacar{
+		position: relative;
+		top: 30px;
+		left: -152px;
+		float: left;
+	}
+	#pago1_label{
+		position: absolute;
+		top: 93px;
+		left: 225px;
+		float: right;
+		display: inline-table;
+		font-family: Varela Round;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 19px;
+		letter-spacing: 0em;
+		text-align: left;
+
+
+	}
+	#pago2_label{
+		position: absolute;
+		top: 115px;
+		left: 225px;
+		
+		display: inline-table;
+		font-family: Varela Round;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 19px;
+		letter-spacing: 0em;
+		text-align: left;
+		}
+	.btn_ingresar{
+		position: relative;
+		width: 96px;
+		height: 36px;
+		left: 130px;
+		top: 30px;
+		background: #86E6AC;
+		border-radius: 38px;
+		border-style: none;
+		color: #ffffff;
+		font-family: Varela Round;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 15px;
+		letter-spacing: 0.05em;
+		text-align: center;
+
+	}
+
+	
+
+} /*-----FIN 720---*/
+
+
+
+@keyframes fade{
+		from{opacity: .4;}
+		to{opacity:1; }
+	}
+
