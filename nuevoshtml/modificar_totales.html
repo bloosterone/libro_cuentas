@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Ingresar Dinero</title>
   
-    <link rel="stylesheet" type="text/css" href="../css_html/modificar_totales.css">
+    <link rel="stylesheet" type="text/css" href="../css/modificar_totales.css">
    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
    <link rel="stylesheet" type="text/css" href="../fonts.css">
 
@@ -16,32 +16,17 @@
                       
   <body>
 
-    <header>
-    <div class="menu_bar">
-      <a href="#" class="bt-menu" >
-        <span id="menu" class="icon-paragraph-right"></span></a>
-        <div class="navbar-nav">
-          <form class="form-inline my-2 my-lg-0">
-            <input name="search" id="search" class="form-control mr-sm-2" type="search" placeholder="Buscar registro" aria-label="Search">
-            <button id="btnBuscador" class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
-
-          </form>
-        </div>
-    </div>
-
-    <nav>
+    <div class="contenedor-navbar">
         
-       <ul>
-        <li><a href="../index.html"><span class=></span>Inicio</a></li>
-        <li><a href="ingresar_dinero.html"><span class=""></span>Ingresar Dinero</a></li>
-        <li><a href="sacar_dinero.html"><span class="icon-rocket"></span>Sacar Dinero</a></li>
-        <li><a href="ver_ingresos.html"><span class="icon-earth"></span>Ver Registros de ingreso</a></li>
-        <li><a href="ver_salidas.html"><span class="icon-mail"></span>Ver Registros de salida</a></li>
-        <li><a href="ver_deudas.html"><span class="icon-mail"></span>Ver deudas</a></li>
-        <li><a href="modificar_totales.html"><span class="icon-mail"></span>Modificar totales</a></li>
-      </ul>
-    </nav>
-  </header>
+      <div class="navbar"><a href="../index.html"><span class="index.html"></span>Inicio</a></div>          
+      <div class="navbar"><a href="../nuevoshtml/ingresar_dinero.html"><span class=""></span>Ingresar Dinero</a></div>
+      <div class="navbar"><a href="../nuevoshtml/sacar_dinero.html"><span class="icon-rocket"></span>Sacar Dinero</a></div>
+      <div class="navbar"><a href="../nuevoshtml/ver_ingresos.html"><span class="icon-earth"></span>Ver Registros de ingreso</a></div>
+      <div class="navbar"><a href="../nuevoshtml/ver_salidas.html"><span class="icon-mail"></span>Ver Registros de salida</a></div>
+      <div class="navbar"><a href="../nuevoshtml/ver_deudas.html"><span class="icon-mail"></span>Ver deudas</a></div>
+      <div class="navbar"><a href="../nuevoshtml/modificar_totales.html"><span class="icon-mail"></span>Modificar totales</a></div>
+      
+    </div>
     
 
     
@@ -49,51 +34,71 @@
     
 
 
-    <div class="container">
+    <div class="contenedor">
 
-      <div class="titulo"><p>Valores Totales</p></div>
-      <div class="capitales">
-       <form action="#" id="capitales">
-         
-       
-              <label for="capital"> Capital Total:</label>
-              <input type="text" name="capital" value="0" id="capital_total">
-              <label for="capital_tarjeta">Tarjeta Total:</label>
-              <input type="text" name="capital_tarjeta" value="0" id="capital_tarjeta">
-              <label for="capital_efectivo">Efectivo Total:</label>
-              <input type="text" name="capital_efectivo" value="0" id="capital_efectivo">
-              <label for="capital_supuesto">Deben Total:</label>
-              <input type="text" name="capital" value="0" id="capital_supuesto">
-             
-            
-            
-      </form>
+      <div class="contenedor-header">
+        <div class="head-search_txt">
+               <div class="search_txt-barra"><input name="search" id="search" type="search" placeholder="Buscar registro" aria-label="Search"></div>
+               <div class="search_txt-boton"><button id="btnBuscador" class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button></div>
+        </div>
+  
+        <div class="head-menu">
+              <a href="#" class="bt-menu" >
+              <span id="menu" class="icon-paragraph-right"></span>
+              </a>
+        </div>
       </div>
-      <div class="subtitulo">
+
+      <div class="contenedor-titulo">
+        <p>Valores Totales</p>
+      </div>
+
+
+      <div class="contenedor-capitales">
+        <form action="#" id="capitales">
+            <label for="capital"> Capital Total:</label>
+            <input type="text" name="capital" value="0" id="capital_total"></br>
+            <label for="capital_tarjeta">Tarjeta Total:</label>
+            <input type="text" name="capital_tarjeta" value="0" id="capital_tarjeta"></br>
+            <label for="capital_efectivo">Efectivo Total:</label>
+            <input type="text" name="capital_efectivo" value="0" id="capital_efectivo"></br>
+            <label for="capital_supuesto">Deben Total:</label>
+            <input type="text" name="capital" value="0" id="capital_supuesto">
+        </form>
+      </div>
+
+      <div class="contenedor-subtitulo">
         
         <img src="../img/cabecera_modificar_totales.png">
       </div>
-<img id="nubecita" src="../img/nubecita.png">
+
+      <div class="contenedor-nube">
+        
+        <img id="nubecita" src="../img/nubecita.png">
+      </div>
+       
       <div class="formulario">
         <form action="#" id="capitales2" class="capitales2">
          
        
               
               <label for="capital_tarjeta">Tarjeta Total:</label>
-              <input type="text" name="capital_tarjeta" value="0" id="capital_tarjeta_nuevo">
+              <input type="text" name="capital_tarjeta" value="0" id="capital_tarjeta_nuevo"></br>
               <label for="capital_efectivo">Efectivo Total:</label>
-              <input type="text" name="capital_efectivo" value="0" id="capital_efectivo_nuevo">
+              <input type="text" name="capital_efectivo" value="0" id="capital_efectivo_nuevo"></br>
               <label for="capital_supuesto">Deben Total:</label>
-              <input type="text" name="capital" value="0" id="capital_supuesto_nuevo">
+              <input type="text" name="capital" value="0" id="capital_supuesto_nuevo"></br>
              
-            
-            <button id="modificar_totales">Modificar</button>
-      </form>
-          <div class="cuidado">
-            <h2>Mucho cuidado, modificaras todos los campos <h3>(aunque esten en 0)</h3></h2>
-          </div>
+        </form>
       </div>
-
+      <div class="contenedor-btn" id="taskId">
+        <button type="submit" class="btn_ingresar" id="modificar_totales">
+          Modificar
+         </button>
+      </div>
+      <div class="cuidado">
+        <h2>Mucho cuidado, modificaras todos los campos <h3>(aunque esten en 0)</h3></h2>
+      </div>  
 
 
 <!-- -------div contenedor--- -->
@@ -105,7 +110,7 @@
   
     <!-- Frontend Logic -->
     
-    <script src="../general_nuevos.js"></script>
+    <script src="../js/general_nuevos.js"></script>
     <script type="text/javascript">
       
 
