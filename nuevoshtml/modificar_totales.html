@@ -116,8 +116,8 @@
 
 
 
-      $(document).on("click","#modificar_totales" ,function(){
-  if(confirm("Segura que quieres modificar los valores totales?")){
+    $(document).on("click","#modificar_totales" ,function(){
+      if(confirm("Segura que quieres modificar los valores totales?")){
                                 console.log("boton apretados");
                             let capit= $('#capital_total_nuevo').val();
                             
@@ -132,15 +132,15 @@
                            supue : supue
                               };
 
-                          $.post("../modificar_valores.php", modi, (response)=>{
+                          $.post("../php/modificar_valores.php", modi, (response)=>{
                             console.log(response);
                             valores();
 
                             
                             alert("Modificados Correctamente =)")
                           });
-                          }
-                        });
+       }
+    });
     </script>
   </body>
 

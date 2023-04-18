@@ -52,7 +52,7 @@ let ver = $('input:radio[name=pago]:checked').val();
     if($('#search').val()) {
       let search = $('#search').val();
       $.ajax({
-        url: 'task-search.php',
+        url: '../php/task-search.php',
         data: {search},
         type: 'POST',
         success: function (response) {
@@ -147,7 +147,7 @@ let ver = $('input:radio[name=pago]:checked').val();
   // Fetching Tasks
   function fetchTasks() {
     $.ajax({
-      url: 'tasks-list.php',
+      url: '../php/tasks-list.php',
       type: 'GET',
       success: function(response) {
         const tasks = JSON.parse(response);
@@ -265,7 +265,7 @@ console.log(id);
     debe_tarjeta_efectivo:debe_tarjeta_efectivo
       };
 
-      $.post('confirm.php', valoress, (response) => {
+      $.post('../php/confirm.php', valoress, (response) => {
         console.log(response);
         fetchTasks();
         valores();
@@ -275,31 +275,31 @@ console.log(id);
       });
 //-----
 
- $(document).on("click","#modificar_valoress" ,function(){
-  if(confirm("Segura que quieres modificar los valores totales?")){
-                                console.log("boton apretados");
-                            let capit= $('#capital_total').val();
+//  $(document).on("click","#modificar_totales" ,function(){
+//   if(confirm("Segura que quieres modificar los valores totales?")){
+//                                 console.log("boton apretados");
+//                             let capit= $('#capital_total').val();
                             
-                            let tarje = $('#capital_tarjeta').val();
-                             let efece = $('#capital_efectivo').val();       
-                           let supue = $('#capital_supuesto').val();
+//                             let tarje = $('#capital_tarjeta').val();
+//                              let efece = $('#capital_efectivo').val();       
+//                            let supue = $('#capital_supuesto').val();
 
-                              const modi = {
-                            capit :capit,
-                            tarje : tarje,
-                             efece :efece,       
-                           supue : supue
-                              };
+//                               const modi = {
+//                             capit :capit,
+//                             tarje : tarje,
+//                              efece :efece,       
+//                            supue : supue
+//                               };
 
-                          $.post("modificar_valores.php", modi, (response)=>{
-                            console.log(response);
-                            valores();
+//                           $.post("../php/modificar_valores.php", modi, (response)=>{
+//                             console.log(response);
+//                             valores();
 
                             
-                            alert("Modificados Correctamente =)")
-                          });
-                          }
-                        });
+//                             alert("Modificados Correctamente =)")
+//                           });
+//                           }
+//                         });
 
 
 
@@ -332,7 +332,7 @@ console.log(id);
       const element = $(this)[0].activeElement.parentElement.parentElement;
       const id = $(element).attr('taskId');
 
-      $.post('task-delete.php', {id}, (response) => {
+      $.post('../php/task-delete.php', {id}, (response) => {
         fetchTasks();
       });
     }

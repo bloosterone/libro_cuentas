@@ -136,7 +136,7 @@
 
 
 
-    $('.task-form').submit(e => {
+    $('.btn_ingresar').click(e => {
     e.preventDefault();
       
 
@@ -145,7 +145,10 @@
    let dinero = $('#dinero_real').val();
    let deben = $('#dinero_deben').val();
    let pagado=0;
-     if ($('input:radio[name=pago]:checked').val()==dinero_tarjetaa) {
+   let saber=$('input:radio[name=pago]:checked').val();
+   console.log(saber);
+
+     if (saber==dinero_tarjetaa) {
              dinero_tarjetaa=dinero;
              dinero_efectivoo="0";
      }
@@ -174,7 +177,7 @@
     const postData = {
       titulo: $('#titulo').val(),
       date: $('#date').val(),
-     pago: $('input:radio[name=pago]:checked').val(),
+     pago: saber,
       dinero_tarjeta: dinero_tarjetaa,
       dinero_efectivo:  dinero_efectivoo,
       dinero_deben: deben,
@@ -189,7 +192,7 @@
               pagado:pagado,
       id: $('#taskId').val()
     };
-    const url ='../task-add.php';
+    const url ='../php/task-add.php';
     console.log(postData, url);
     
     $.post(url, postData, (response) => {

@@ -30,7 +30,7 @@ $('#menu').on("click",function(){
       const id = $(element).attr('taskId');
       console.log(id);
 
-      $.post('../task-delete.php', {id}, (response) => {
+      $.post('../php/task-delete.php', {id}, (response) => {
         console.log(response);
         fetchTasks();
       });
@@ -43,16 +43,24 @@ $('#menu').on("click",function(){
 
 function valores(){
     $.ajax({
-      url: '../valores.php',
+      url: '../php/valores.php',
       type: 'GET',
       success: function(response) {
-        const taskss = JSON.parse(response);
+        console.log(response);
+
+  const taskss= JSON.parse(response);   
+
+
+
+
+        // const taskss = (response);
+       
         let tem = '';
         let uno;
 		let dos;
 		let tres;
 		let cuatro;
-	
+    console.log(uno,dos,tres,cuatro);
         taskss.forEach(task =>{
          uno=task.capital;
          dos=task.tarjeta;
@@ -64,6 +72,7 @@ function valores(){
 		$("#capital_efectivo").val(tres);
 		$("#capital_supuesto").val(cuatro);
       }
+
     });
 }
  //fin funcion valores
